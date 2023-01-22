@@ -24,7 +24,7 @@ export const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact({ name, phone: number }));
+    dispatch(addContact({ name, number }));
   };
 
   const onInputChange = e => {
