@@ -7,13 +7,13 @@ import { getDeletingId } from 'redux/selectors';
 
 export const Contact = ({ contact }) => {
   const dispatch = useDispatch();
-  const { name, phone, id } = contact;
+  const { name, number, id } = contact;
   const deletingId = useSelector(getDeletingId);
 
   return (
     <ContactItem>
       <ContactData>
-        {name}: {phone}
+        {name}: {number}
       </ContactData>
       <Button
         disabled={id === deletingId}
@@ -30,7 +30,6 @@ Contact.propTypes = {
   contact: PropTypes.exact({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }),
 };
