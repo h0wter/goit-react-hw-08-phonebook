@@ -7,6 +7,7 @@ import { PublicRoute } from './PublicRoute';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+import { Box } from './Box';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -23,7 +24,7 @@ export const App = () => {
 
   return (
     !isRefreshing && (
-      <>
+      <Box p={2}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -51,7 +52,7 @@ export const App = () => {
           </Route>
         </Routes>
         <GlobalStyle />
-      </>
+      </Box>
     )
   );
 };
