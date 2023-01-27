@@ -1,16 +1,11 @@
 import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Box } from './Box';
 import { GlobalStyle } from './GlobalStyle';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
-import { selectIsRefreshing } from 'redux/auth/selectors';
 import { useAuth } from 'hooks/useAuth';
 
 const HomePage = lazy(() => import('../pages/Home'));
@@ -59,16 +54,4 @@ export const App = () => {
       </>
     )
   );
-  // return (
-  //   <>
-  //     <Box as="h2" mb="10px">
-  //       Phonebook
-  //     </Box>
-  //     <ContactForm />
-  //     <h2>Contacts</h2>
-  //     <Filter />
-  //     <ContactList />
-  //     <GlobalStyle />
-  //   </>
-  // );
 };
